@@ -31,4 +31,4 @@ This repository demonstrates how loading `styled-components` twice can lead to a
 jest.mock("./sub2");
 ```
 
-When Jest loads a mocked module, it temporally clears its module cache. Therefore, any module that was loaded from outside and inside `sub2` will be loaded again. This is why `styled-components` is loaded twice.
+When Jest loads a mocked module, it temporally clears its module cache. Therefore, any module that was loaded from inside `sub2` will be loaded again. If the same module has been loaded before, it will be loaded twice. This is why `styled-components` is loaded twice.
